@@ -1,7 +1,6 @@
 // Crie um programa para inserir valores inteiros em uma
 // matriz 4 x 4. Calcular e imprimir a soma de todos os
 // elementos da matriz
-
 import java.util.Scanner;
 
 public class Exercicio1 {
@@ -22,7 +21,7 @@ public class Exercicio1 {
             for(j=0; j<4; j++){
                 System.out.print(matriz[i][j] + "\t"); // tabulação para alinhar
             }
-            System.out.println();
+            System.out.println(); // quebra de linha ao final da linha da matriz
         }
 
         input.close();
