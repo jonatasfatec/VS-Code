@@ -1,15 +1,27 @@
-// Faça um programa que possua um método
-// chamado verificarTempo que recebe por parâmetro
-// o tempo de duração de uma fábrica expressa em
-// segundos. O método deve efetuar cálculos a fim de
-// imprimir a equivalência do tempo recebido em
-// horas, minutos e segundos.
-// exemplo:
-// se valor recebido pelo método for 7265 segundos então
-// será exibida a seguinte mensagem:
-// 7265 segundo(s) equivalem a 2 hora(s) , 1 minuto(s) e 5
-// segundo(s)
+import java.util.Scanner;
 
 public class Exercicio4 {
-    
+
+    public static void verificarTempo(int tempo) {
+        int horas = tempo / 3600;
+        int resto = tempo % 3600;
+        int minutos = resto / 60;
+        int segundos = resto % 60;
+
+        System.out.println(tempo + " segundo(s) equivalem a " 
+                           + horas + " hora(s), " 
+                           + minutos + " minuto(s) e " 
+                           + segundos + " segundo(s)");
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Digite o tempo em segundos: ");
+        int segundos = input.nextInt();
+
+        verificarTempo(segundos);
+
+        input.close();
+    }
 }
