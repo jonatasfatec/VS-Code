@@ -37,12 +37,12 @@ public class Exercicio3 {
             B[i] = soma;
         }
 
-        System.out.println("Vetor A: ");
+        System.out.println("A: ");
         for (int i = 0; i < 15; i++) {
             System.out.print(A[i] + " ");
         }
 
-        System.out.println("\nVetor B (somatórias): ");
+        System.out.println("\nB (somatórias): ");
         for (int i = 0; i < 15; i++) {
             System.out.print(B[i] + " ");
         }
@@ -92,15 +92,20 @@ public class Exercicio3 {
             }
         } while (n != 1 && n != 2 && n != 3);
 
-        if (n == 1) {
-            int resultado = metodo1(input);
-            System.out.println("Soma dos números pares e divisíveis por 3: " + resultado);
-        } else if (n == 2) {
-            metodo2(input);
-        } else if (n == 3) {
-            metodo3(input);
+        switch (n) {
+            case 1:
+                System.out.println("Soma dos números pares e divisíveis por 3: " + metodo1(input));
+            break;
+            case 2:
+                metodo2(input);
+            break;
+            case 3:
+                metodo3(input);
+            break;
+            default:
+                System.out.println("Opção inválida!");
+            break;
         }
-
         input.close();
     }
 }
