@@ -17,25 +17,36 @@ public class Exercicio1 {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int valorA = 0;
-        int valorB = 0;
+        int valorA, valorB;
 
-        while (!(valorA < 0 && valorB < 0)) {
-            System.out.print("Digite um valor para A (4 dígitos). Caso queira encerrar, digite um número negativo: ");
-            valorA = input.nextInt();
+        System.out.print("Digite um valor para A (4 dígitos). Caso queira encerrar, digite um número negativo: ");
+        valorA = input.nextInt();
 
-            System.out.print("Digite um valor para B (2 dígitos): ");
-            valorB = input.nextInt();
+        System.out.print("Digite um valor para B (2 dígitos): ");
+        valorB = input.nextInt();
 
-            if (valorA < 0 && valorB < 0) {
-                System.out.println("\nEncerrando o programa.");
-            } else {
+        // Testa antes de entrar no while
+        if (valorA < 0 || valorB < 0) {
+            System.out.println("\nEncerrando o programa.");
+        } else {
+            // Executa enquanto os dois são positivos
+            while (valorA >= 0 && valorB >= 0) {
+
                 if (valorA >= 1000 && valorA <= 9999 && valorB >= 10 && valorB <= 99) {
                     encaixarValores(valorA, valorB);
                 } else {
-                    System.out.println("'A' deve ter 4 dígitos e 'B' deve ter 2 dígitos.\n");
+                    System.out.println("Entrada inválida! 'A' deve ter 4 dígitos e 'B' deve ter 2 dígitos.\n");
                 }
+
+                // lê de novo no final do laço
+                System.out.print("\nDigite um valor para A (4 dígitos). Caso queira encerrar, digite um número negativo: ");
+                valorA = input.nextInt();
+
+                System.out.print("Digite um valor para B (2 dígitos): ");
+                valorB = input.nextInt();
             }
+
+            System.out.println("\nEncerrando o programa.");
         }
 
         input.close();
