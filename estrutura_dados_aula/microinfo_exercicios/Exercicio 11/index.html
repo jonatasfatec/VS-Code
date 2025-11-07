@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saudação Personalizada</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Saudação Personalizada</h1>
+    <p>Digite seu nome para receber uma saudação:</p>
+    <form onsubmit="mostrarSaudacao(event)">
+        <input type="text" id="nome" placeholder="Digite seu nome" required>
+        <button type="submit">Saudar</button>
+    </form>
+    <div id="resultado"></div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
