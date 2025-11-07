@@ -31,7 +31,7 @@ public class ABBContagem {
         }
     }
 
-    // ----------- 1º Contar o número de nós -----------
+    // 1º Contar o número de nós
     public int contarNos() {
         return contarNosRec(raiz);
     }
@@ -41,7 +41,7 @@ public class ABBContagem {
         return 1 + contarNosRec(atual.getEsquerda()) + contarNosRec(atual.getDireita());
     }
 
-    // ----------- 2º Contar quantas vezes um valor aparece -----------
+    // 2º Contar quantas vezes um valor aparece
     public int contarOcorrencias(int valor) {
         return contarOcorrenciasRec(raiz, valor);
     }
@@ -53,7 +53,7 @@ public class ABBContagem {
         return contarOcorrenciasRec(atual.getDireita(), valor);
     }
 
-    // ----------- 3º Calcular altura da árvore -----------
+    // 3º Calcular altura da árvore
     public int altura() {
         return alturaRec(raiz);
     }
@@ -63,7 +63,7 @@ public class ABBContagem {
         return 1 + Math.max(alturaRec(atual.getEsquerda()), alturaRec(atual.getDireita()));
     }
 
-    // ----------- 4º Contar nós folha -----------
+    // 4º Contar nós folha
     public int contarFolhas() {
         return contarFolhasRec(raiz);
     }
@@ -74,7 +74,7 @@ public class ABBContagem {
         return contarFolhasRec(atual.getEsquerda()) + contarFolhasRec(atual.getDireita());
     }
 
-    // ----------- 5º Maior e menor elemento -----------
+    // 5º Maior e menor elemento
     public int maior() {
         NoContagem atual = raiz;
         if (atual == null) throw new IllegalStateException("Árvore vazia");
@@ -89,7 +89,7 @@ public class ABBContagem {
         return atual.getInfo();
     }
 
-    // ----------- 6º Soma dos elementos -----------
+    // 6º Soma dos elementos
     public int soma() {
         return somaRec(raiz);
     }
@@ -101,7 +101,7 @@ public class ABBContagem {
                somaRec(atual.getDireita());
     }
 
-    // ----------- 7º Percursos -----------
+    // 7º Percursos
     public String percorreEmOrdem() {
         if (estaVazia()) return "árvore vazia";
         return percorreEmOrdemRec(raiz);
@@ -138,7 +138,7 @@ public class ABBContagem {
                atual.toString();
     }
 
-    // ----------- Classe interna NoContagem -----------
+    // Classe interna NoContagem
     static class NoContagem {
         private int info;
         private int contagem;

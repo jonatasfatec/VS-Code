@@ -29,7 +29,7 @@ public class ABB {
         }
     }
 
-    // ----------- 1º Contar o número de nós -----------
+    // 1º Contar o número de nós
     public int contarNos() {
         return contarNosRec(raiz);
     }
@@ -39,7 +39,7 @@ public class ABB {
         return 1 + contarNosRec(atual.getEsquerda()) + contarNosRec(atual.getDireita());
     }
 
-    // ----------- 2º Contar quantas vezes um valor aparece -----------
+    // 2º Contar quantas vezes um valor aparece
     public int contarOcorrencias(int valor) {
         return contarOcorrenciasRec(raiz, valor);
     }
@@ -50,7 +50,7 @@ public class ABB {
         return cont + contarOcorrenciasRec(atual.getEsquerda(), valor) + contarOcorrenciasRec(atual.getDireita(), valor);
     }
 
-    // ----------- 3º Calcular altura da árvore -----------
+    // 3º Calcular altura da árvore
     public int altura() {
         return alturaRec(raiz);
     }
@@ -60,7 +60,7 @@ public class ABB {
         return 1 + Math.max(alturaRec(atual.getEsquerda()), alturaRec(atual.getDireita()));
     }
 
-    // ----------- 4º Contar nós folha -----------
+    // 4º Contar nós folha
     public int contarFolhas() {
         return contarFolhasRec(raiz);
     }
@@ -71,7 +71,7 @@ public class ABB {
         return contarFolhasRec(atual.getEsquerda()) + contarFolhasRec(atual.getDireita());
     }
 
-    // ----------- 5º Maior e menor elemento -----------
+    // 5º Maior e menor elemento
     public int maior() {
         No atual = raiz;
         if (atual == null) throw new IllegalStateException("Árvore vazia");
@@ -86,7 +86,7 @@ public class ABB {
         return atual.getInfo();
     }
 
-    // ----------- 6º Soma dos elementos -----------
+    // 6º Soma dos elementos
     public int soma() {
         return somaRec(raiz);
     }
@@ -96,7 +96,7 @@ public class ABB {
         return atual.getInfo() + somaRec(atual.getEsquerda()) + somaRec(atual.getDireita());
     }
 
-    // ----------- 7º Percursos -----------
+    // 7º Percurso
     public String percorreEmOrdem() {
         if (estaVazia()) return "árvore vazia";
         return percorreEmOrdemRec(raiz);
@@ -133,7 +133,7 @@ public class ABB {
                atual.toString();
     }
 
-    // ----------- Busca binária -----------
+    // Busca binária
     public boolean buscaBinaria(int i) {
         if (estaVazia()) return false;
         return buscaBinariaRec(i, raiz);
