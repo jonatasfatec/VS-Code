@@ -16,12 +16,12 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) {
         ABB arvoreRepeticao = new ABB();
-        ABBContagem arvoreSemRepeticao = new ABBContagem();
+        ABBsemRepeticao arvoreSemRepeticao = new ABBsemRepeticao();
 
         Random rand = new Random();
 
         for (int i = 0; i < 200; i++) {
-            int valor = rand.nextInt(100); // 0 a 99
+            int valor = rand.nextInt(100);
             arvoreRepeticao.insere(valor);
             arvoreSemRepeticao.insere(valor);
         }

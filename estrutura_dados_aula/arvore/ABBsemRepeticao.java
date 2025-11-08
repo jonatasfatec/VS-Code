@@ -1,4 +1,4 @@
-public class ABBContagem {
+public class ABBsemRepeticao {
     private NoContagem raiz;
 
     public boolean estaVazia() {
@@ -53,7 +53,7 @@ public class ABBContagem {
         return contarOcorrenciasRec(atual.getDireita(), valor);
     }
 
-    // 3º Calcular altura da árvore
+    // 3º Calcular altura
     public int altura() {
         return alturaRec(raiz);
     }
@@ -63,7 +63,7 @@ public class ABBContagem {
         return 1 + Math.max(alturaRec(atual.getEsquerda()), alturaRec(atual.getDireita()));
     }
 
-    // 4º Contar nós folha
+    // 4º Contar folhas
     public int contarFolhas() {
         return contarFolhasRec(raiz);
     }
@@ -74,7 +74,7 @@ public class ABBContagem {
         return contarFolhasRec(atual.getEsquerda()) + contarFolhasRec(atual.getDireita());
     }
 
-    // 5º Maior e menor elemento
+    // 5º Maior e menor
     public int maior() {
         NoContagem atual = raiz;
         if (atual == null) throw new IllegalStateException("Árvore vazia");
@@ -89,16 +89,16 @@ public class ABBContagem {
         return atual.getInfo();
     }
 
-    // 6º Soma dos elementos
+    // 6º Soma
     public int soma() {
         return somaRec(raiz);
     }
 
     private int somaRec(NoContagem atual) {
         if (atual == null) return 0;
-        return (atual.getInfo() * atual.getContagem()) +
-               somaRec(atual.getEsquerda()) +
-               somaRec(atual.getDireita());
+        return (atual.getInfo() * atual.getContagem())
+             + somaRec(atual.getEsquerda())
+             + somaRec(atual.getDireita());
     }
 
     // 7º Percursos
@@ -109,9 +109,9 @@ public class ABBContagem {
 
     private String percorreEmOrdemRec(NoContagem atual) {
         if (atual == null) return "";
-        return percorreEmOrdemRec(atual.getEsquerda()) +
-               atual.toString() +
-               percorreEmOrdemRec(atual.getDireita());
+        return percorreEmOrdemRec(atual.getEsquerda())
+             + atual.toString()
+             + percorreEmOrdemRec(atual.getDireita());
     }
 
     public String percorrePreOrdem() {
@@ -121,9 +121,9 @@ public class ABBContagem {
 
     private String percorrePreOrdemRec(NoContagem atual) {
         if (atual == null) return "";
-        return atual.toString() +
-               percorrePreOrdemRec(atual.getEsquerda()) +
-               percorrePreOrdemRec(atual.getDireita());
+        return atual.toString()
+             + percorrePreOrdemRec(atual.getEsquerda())
+             + percorrePreOrdemRec(atual.getDireita());
     }
 
     public String percorrePosOrdem() {
@@ -133,9 +133,9 @@ public class ABBContagem {
 
     private String percorrePosOrdemRec(NoContagem atual) {
         if (atual == null) return "";
-        return percorrePosOrdemRec(atual.getEsquerda()) +
-               percorrePosOrdemRec(atual.getDireita()) +
-               atual.toString();
+        return percorrePosOrdemRec(atual.getEsquerda())
+             + percorrePosOrdemRec(atual.getDireita())
+             + atual.toString();
     }
 
     // Classe interna NoContagem

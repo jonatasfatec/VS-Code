@@ -1,10 +1,9 @@
 import java.util.Random;
 
 public class TesteAltura {
-
     public static void main(String[] args) {
         final int tamanho = 200;
-        final int repeticoes = 10; // número de testes para calcular média
+        final int repeticoes = 10;
         Random rand = new Random();
 
         int somaAlturaComRep = 0;
@@ -12,10 +11,10 @@ public class TesteAltura {
 
         for (int t = 1; t <= repeticoes; t++) {
             ABB arvoreComRep = new ABB();
-            ABBContagem arvoreSemRep = new ABBContagem();
+            ABBsemRepeticao arvoreSemRep = new ABBsemRepeticao();
 
             for (int i = 0; i < tamanho; i++) {
-                int valor = rand.nextInt(100); // valores entre 0 e 99
+                int valor = rand.nextInt(100);
                 arvoreComRep.insere(valor);
                 arvoreSemRep.insere(valor);
             }
@@ -31,13 +30,5 @@ public class TesteAltura {
             System.out.println("Altura SEM repetição:  " + alturaSem);
             System.out.println("----------------------------");
         }
-
-        double mediaCom = (double) somaAlturaComRep / repeticoes;
-        double mediaSem = (double) somaAlturaSemRep / repeticoes;
-
-        System.out.println("\n=== RESULTADO FINAL ===");
-        System.out.printf("Média altura COM repetição: %.2f\n", mediaCom);
-        System.out.printf("Média altura SEM repetição: %.2f\n", mediaSem);
-        System.out.println("========================");
     }
 }
